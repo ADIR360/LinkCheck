@@ -1,18 +1,9 @@
 {
   "name": "click-tracker-frontend",
   "version": "1.0.0",
-  "description": "Click Tracker Frontend - Advanced Link Analytics Dashboard",
-  "main": "index.js",
+  "description": "Click Tracker Frontend",
+  "main": "index.html",
   "scripts": {
-    "dev": "node index.js",
-    "build": "echo 'No build needed'",
-    "start": "node index.js"
-  },
-  "dependencies": {
-    "express": "^4.18.2"
-  },
-  "devDependencies": {},
-  "engines": {
-    "node": ">=14.0.0"
+    "build": "echo 'Static site - no build needed'"
   }
 }
