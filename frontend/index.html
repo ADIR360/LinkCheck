@@ -478,6 +478,11 @@
     <script>
         const { createApp } = Vue;
 
+        // Get API URL from environment or default to localhost
+        const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+            ? 'http://localhost:8000' 
+            : 'https://your-backend-domain.com';
+
         createApp({
             data() {
                 return {
@@ -504,7 +509,7 @@
                 async loadData() {
                     this.loading = true;
                     try {
-                        const response = await axios.get('/api/links');
+                        const response = await axios.get(`${API_URL}/api/links`);
                         this.links = response.data.links;
                         this.stats = response.data.stats;
                     } catch (error) {
@@ -521,7 +526,7 @@
 
                     this.loading = true;
                     try {
-                        const response = await axios.post('/api/links', {
+                        const response = await axios.post(`${API_URL}/api/links`, {
                             url: this.newLink.url,
                             title: this.newLink.title,
                             code: this.newLink.code
@@ -539,7 +544,7 @@
                 },
                 async viewStats(code) {
                     try {
-                        const response = await axios.get(`/api/stats/${code}`);
+                        const response = await axios.get(`${API_URL}/api/stats/${code}`);
                         this.selectedLinkStats = response.data;
                         this.showStatsModal = true;
                     } catch (error) {

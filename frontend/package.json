@@ -1,0 +1,16 @@
+{
+  "name": "click-tracker-frontend",
+  "version": "1.0.0",
+  "description": "Click Tracker Frontend - Advanced Link Analytics Dashboard",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 3000",
+    "build": "echo 'Static frontend - no build needed'",
+    "start": "python -m http.server 3000"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
